@@ -13,6 +13,7 @@ export class TodoEditComponent implements OnInit {
   id: number;
   todo: Todo;
 
+
   constructor(private todoDataService: TodoDataService, private route: ActivatedRoute, private router: Router) { }
 
   // ngOnInit() {
@@ -67,6 +68,7 @@ export class TodoEditComponent implements OnInit {
       )
     }
   }
+
 
 
 }
