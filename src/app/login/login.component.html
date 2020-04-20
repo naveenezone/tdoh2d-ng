@@ -1,17 +1,37 @@
-<div class="container">
-  <div class="row">
-    <div>
-      <input type="text" name="username" placeholder="Username" [(ngModel)]="username">
+<div class="col">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <!-- <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" /> -->
+      </div>
+
+      <!-- Login Form -->
+      <form (ngSubmit)="handleLogin()" #loginForm="ngForm">
+        <input type="text" id="login" class="fadeIn second" ngModel required #login="ngModel" [(ngModel)]="username"
+          name="login" placeholder="login">
+        <input type="text" id="password" class="fadeIn third" [(ngModel)]="password" name="password"
+          placeholder="password">
+        <input type="submit" class="fadeIn fourth" [disabled]="loginForm.invalid" value="Log In">
+        <!-- <button type="button" class="btn btn-primary" (click)=handleLogin()>Login</button> -->
+      </form>
+
+      <div *ngIf="invalidLogin" class="alert alert-primary" role="alert">
+        Invalid Login
+      </div>
+
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+
     </div>
-    <div>
-      <input type="password" name="password" placeholder="Password" [(ngModel)]="password">
-    </div>
-    <button type="button" class="btn btn-primary" (click)=handleLogin()>Login</button>
-
   </div>
-
-  <div *ngIf="invalidLogin" class="alert alert-primary" role="alert">
-    Invalid Login
-  </div>
-
 </div>
