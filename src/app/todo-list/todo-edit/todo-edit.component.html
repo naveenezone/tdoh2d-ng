@@ -1,1 +1,33 @@
-<p>todo-edit works!</p>
+<div class="card border-light mb-3" style="max-width: 18rem;">
+    <div class="card-body">
+  
+      <div class="form-group">
+        <label for="name">Title</label>
+        <input type="text" id="title" class="form-control" *ngIf="todo" [(ngModel)]="todo.title">
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" rows="3" *ngIf="todo" [(ngModel)]="todo.description"></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="name">Target Date</label>
+        <input type="date" id="targetDate" class="form-control" *ngIf="todo"
+          [ngModel]="todo.targetDate | date: 'yyyy-MM-dd'" (ngModelChange)="todo.targetDate = $event">
+      </div>
+  
+      <div class="form-group">
+        <label for="status">Completed</label>
+        <select class="custom-select" *ngIf="todo" [(ngModel)]="todo.done">
+          <option [ngValue]="true">Yes</option>
+          <option [ngValue]="false">No</option>
+        </select>
+      </div>
+  
+  
+      <button class="btn btn-primary" (click)="saveTodo()">Save Todo</button>
+      <button class="btn btn-warning" [routerLink]="['/todos']">Cancel</button>
+  
+    </div>
+  </div>

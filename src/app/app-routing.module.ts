@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: 'todos/:id', component: TodoDetailComponent , canActivate: [RouteGuardAuthService] },
   { path: 'todo-edit', component: TodoEditComponent , canActivate: [RouteGuardAuthService] },
   { path: 'todos/:id/edit', component: TodoEditComponent , canActivate: [RouteGuardAuthService] },
+  { path: 'todos/:id/new', component: TodoEditComponent, canActivate: [RouteGuardAuthService] },
   { path: 'todos/view/:id', component: TodoDetailComponent , canActivate: [RouteGuardAuthService] },
   // 
   { path: '**', component: ErrorComponent }

@@ -1,7 +1,7 @@
 <div class="card" style="width: 18rem;">
     <!-- <img src="assets/img/{{todo.name}}.jpg" class="card-img-top" alt="..."> -->
     <div class="card-body">
-        <h5 class="card-title" *ngIf="todo" >{{todo.title}}</h5>
+        <h5 class="card-title" *ngIf="todo">{{todo.title}}</h5>
 
         <table class="table table-hover">
             <tbody>
@@ -15,7 +15,7 @@
                 </tr>
                 <tr>
                     <th>Completed</th>
-                    <td *ngIf="todo">{{todo.done}}</td>
+                    <td *ngIf="todo">{{sayYesNo(todo.done)}}</td>                    
                 </tr>
             </tbody>
         </table>
