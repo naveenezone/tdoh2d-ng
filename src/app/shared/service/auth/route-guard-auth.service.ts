@@ -6,14 +6,14 @@ import { HardcodeauthService } from './hardcodeauth.service';
   providedIn: 'root'
 })
 
-export class RouteGuardAuthService implements CanActivate{
+export class RouteGuardAuthService implements CanActivate {
 
   username: string
   constructor(private authService: HardcodeauthService, private router: Router) { }
 
   // canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree;
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-  
+
     if (this.authService.isUserLoggedIn()) {
       return true;
     } else {

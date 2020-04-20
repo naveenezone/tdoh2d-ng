@@ -29,7 +29,6 @@ export class TodoListComponent implements OnInit {
     // this.todos = response
     // }
     // );
-
     this.refreshTodos();
 
   }
@@ -74,7 +73,6 @@ export class TodoListComponent implements OnInit {
     // console.log(`AddTodo`);
     this.router.navigate(['todos', -1, 'new']);
   }
-
 
   sayYesNo(ops) {
     if (ops) {

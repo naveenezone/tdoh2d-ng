@@ -17,7 +17,7 @@
       <form (ngSubmit)="handleLogin()" #loginForm="ngForm">
         <input type="text" id="login" class="fadeIn second" ngModel required #login="ngModel" [(ngModel)]="username"
           name="login" placeholder="login">
-        <input type="text" id="password" class="fadeIn third" [(ngModel)]="password" name="password"
+        <input type="password" id="password" class="fadeIn third" [(ngModel)]="password" name="password"
           placeholder="password">
         <input type="submit" class="fadeIn fourth" [disabled]="loginForm.invalid" value="Log In">
         <!-- <button type="button" class="btn btn-primary" (click)=handleLogin()>Login</button> -->

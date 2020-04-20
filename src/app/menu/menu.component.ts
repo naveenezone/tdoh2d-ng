@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HardcodeauthService } from '../shared/service/auth/hardcodeauth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -8,9 +9,13 @@ import { HardcodeauthService } from '../shared/service/auth/hardcodeauth.service
 })
 export class MenuComponent implements OnInit {
 
-  constructor(public authService: HardcodeauthService) { }
+  // constructor(public authService: HardcodeauthService) { }
+  constructor(public authService: HardcodeauthService, private router: Router) { }
+  
+  
 
   authService_logout() {
+    this.router.navigate(['login']);
     return this.authService.logout()
   }
 

@@ -25,7 +25,6 @@ export class TodoDetailComponent implements OnInit {
     );
   }
 
-
   sayYesNo(ops) {
     if (ops) {
       // console.log('ops is true.');
