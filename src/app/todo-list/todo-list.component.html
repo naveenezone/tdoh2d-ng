@@ -1,0 +1,25 @@
+<div class="card border-light mb-3" style="max-width: 50rem;">
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Target Date</th>
+                    <th scope="col">Completed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let todo of todos">
+                    <th scope="row">{{todo.id}}</th>
+                    <td>{{todo.title}}</td>
+                    <td>{{todo.targetDate| date}}</td>
+                    <td>{{todo.done}}</td>
+                    <td><a [routerLink]="['/todos','view',todo.id]" class="btn btn-info">View</a></td>
+                    <td><a [routerLink]="['/todos',todo.id,'edit']" class="btn btn-warning">Edit</a></td>
+                    <td><a [routerLink]="['/todos']" class="btn btn-danger">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

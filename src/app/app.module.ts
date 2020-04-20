@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,10 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ErrorComponent } from './error/error.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoDetailComponent } from './todo-list/todo-detail/todo-detail.component';
+import { TodoEditComponent } from './todo-list/todo-edit/todo-edit.component';
+import { MyBoolPipe } from './shared/pipe/myBool.pipe';
 
 @NgModule({
   declarations: [
@@ -21,12 +26,17 @@ import { ErrorComponent } from './error/error.component';
     FooterComponent,
     LoginComponent,
     LogoutComponent,
-    ErrorComponent
+    ErrorComponent,
+    TodoListComponent,
+    TodoDetailComponent,
+    TodoEditComponent,
+    MyBoolPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

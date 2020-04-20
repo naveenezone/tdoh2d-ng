@@ -1,0 +1,25 @@
+<div class="card" style="width: 18rem;">
+    <!-- <img src="assets/img/{{todo.name}}.jpg" class="card-img-top" alt="..."> -->
+    <div class="card-body">
+        <h5 class="card-title" *ngIf="todo" >{{todo.title}}</h5>
+
+        <table class="table table-hover">
+            <tbody>
+                <tr>
+                    <th> ID</th>
+                    <td *ngIf="todo">{{todo.id}}</td>
+                </tr>
+                <tr>
+                    <th>Target Date</th>
+                    <td *ngIf="todo">{{todo.targetDate|date}}</td>
+                </tr>
+                <tr>
+                    <th>Completed</th>
+                    <td *ngIf="todo">{{todo.done}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="card-text" *ngIf="todo">{{todo.description}}</p>
+        <a [routerLink]="['/todos']" class="btn btn-primary">Go back</a>
+    </div>
+</div>

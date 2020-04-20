@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HardcodeauthService } from '../shared/service/auth/hardcodeauth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,11 +9,15 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  username = 'sam';
-  password = '';
+  // username = 'sam';
+  // password = 'pass123';
+  username;
+  password;
   invalidLogin = false;
+  
 
-  constructor(private router: Router) { }
+  constructor(private authService: HardcodeauthService, private router: Router) { }
+
 
   ngOnInit(): void {
   }
@@ -22,13 +27,22 @@ export class LoginComponent implements OnInit {
   //  console.log(this.username);
   //  console.log(this.password);
 
-    if (this.username === "sam" && this.password === "pass123") {
+    // if (this.username === "sam" && this.password === "pass123") {
+    //   this.router.navigate(['welcome', this.username]);
+    //   this.invalidLogin = false;
+    // }
+    // else {
+    //   this.invalidLogin = true;
+    // }
+
+    if(this.authService.authenticate(this.username, this.password)){
       this.router.navigate(['welcome', this.username]);
-      this.invalidLogin = false;
-    }
-    else {
+        this.invalidLogin = false;
+    }else {
       this.invalidLogin = true;
     }
+
+
 }
 
 }
