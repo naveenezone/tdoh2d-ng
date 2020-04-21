@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-import { HardcodeauthService } from './hardcodeauth.service';
+import { BasicAuthService } from './basic-auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import { HardcodeauthService } from './hardcodeauth.service';
 export class RouteGuardAuthService implements CanActivate {
 
   username: string
-  constructor(private authService: HardcodeauthService, private router: Router) { }
+  constructor(private authService: BasicAuthService, private router: Router) { }
 
   // canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree;
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {

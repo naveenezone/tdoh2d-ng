@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoDetailComponent } from './todo-list/todo-detail/todo-detail.component';
 import { TodoEditComponent } from './todo-list/todo-edit/todo-edit.component';
 import { MyBoolPipe } from './shared/pipe/myBool.pipe';
+import { HttpInterceptorBasicAuthService } from './shared/service/http/http-interceptor-basic-auth.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,9 @@ import { MyBoolPipe } from './shared/pipe/myBool.pipe';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

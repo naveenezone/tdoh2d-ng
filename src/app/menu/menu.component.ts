@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HardcodeauthService } from '../shared/service/auth/hardcodeauth.service';
 import { Router } from '@angular/router';
+import { BasicAuthService } from '../shared/service/auth/basic-auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class MenuComponent implements OnInit {
 
   // constructor(public authService: HardcodeauthService) { }
-  constructor(public authService: HardcodeauthService, private router: Router) { }
+  constructor(public authService: BasicAuthService, private router: Router) { }
   
   
 
